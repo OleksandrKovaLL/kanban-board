@@ -12,6 +12,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/kanban-board',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
