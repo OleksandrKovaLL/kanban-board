@@ -15,8 +15,8 @@ View application: https://oleksandrkovall.github.io/kanban-board/
 
 🛠️ Built With
 
-React 18 - Modern React with hooks
-TypeScript - Type-safe development
-Vite - Lightning-fast build tool
-Tailwind CSS - Utility-first styling
-@hello-pangea/dnd - Beautiful drag and drop
+⚛️ React 18 - The atom symbol represents React's logo
+📘 TypeScript - Blue book represents TypeScript's blue branding
+⚡ Vite - Lightning bolt represents speed and "Vite" (French for fast)
+🎨 Tailwind CSS - Artist palette represents styling and design
+🎯 @hello-pangea/dnd - Target/dart represents precision in drag & drop interactions
