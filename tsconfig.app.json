@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+    // Add app-specific configurations
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.svg"
+  ],
+  // Include app files
+  "exclude": [
+    "node_modules",
+    "server/**/*"
+  ]
+}
