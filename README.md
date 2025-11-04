@@ -1,4 +1,4 @@
-🗂️ Kanban Board
+## 🗂️ Kanban Board
 Task management application built with React, TypeScript, and Vite. Organize your tasks with intuitive drag-and-drop functionality across four customizable columns.
 
 View application: https://oleksandrkovall.github.io/kanban-board/
