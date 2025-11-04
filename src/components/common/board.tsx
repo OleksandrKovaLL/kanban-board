@@ -58,7 +58,7 @@ export const Board: React.FC<Props> = React.memo(
       if (boardStatus === 'todo') {
         return (
           <Button
-            className="text-secondaryColor mr-4 cursor-pointer"
+            className="text-secondaryColor mr-2 sm:mr-3 md:mr-4 cursor-pointer"
             variant="tertiary"
             text="Добавить"
             onClick={addItemHandler}
@@ -79,7 +79,7 @@ export const Board: React.FC<Props> = React.memo(
                   variant="secondary"
                   onClick={deleteCompletedTasks}
                   icon={<TrashIcon isDraggingOver={snapshot.isDraggingOver} />}
-                  className="mr-4 cursor-pointer"
+                  className="mr-2 sm:mr-3 md:mr-4 cursor-pointer"
                 />
                 {provided.placeholder}
               </div>
@@ -94,7 +94,7 @@ export const Board: React.FC<Props> = React.memo(
     // Memoize the main container class
     const containerClass = useCallback((isDraggingOver: boolean) => {
       return cn(
-        'bg-dark w-[430px] min-h-[685px] transition-opacity duration-200 overflow-x-hidden',
+        'bg-dark w-full sm:w-full md:w-full lg:w-full xl:w-full min-h-[500px] sm:min-h-[550px] md:min-h-[600px] lg:min-h-[650px] xl:min-h-[685px] transition-opacity duration-200 overflow-x-hidden',
         isDraggingOver ? 'opacity-70' : 'opacity-100'
       )
     }, [])
@@ -105,17 +105,27 @@ export const Board: React.FC<Props> = React.memo(
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className={containerClass(snapshot.isDraggingOver)}
+            className={cn(
+              '@container', // Робимо board контейнером для container queries
+              containerClass(snapshot.isDraggingOver)
+            )}
           >
-            <div className={cn('flex justify-between pt-7 pb-4', className)}>
-              <div className="flex items-center gap-2">
-                <div className="ml-4">{boardIcon}</div>
+            <div className={cn('flex justify-between pt-4 sm:pt-5 md:pt-6 lg:pt-7 pb-3 sm:pb-4', className)}>
+              <div className="flex items-center gap-1 sm:gap-2">
+                <div className="ml-2 sm:ml-3 md:ml-4">{boardIcon}</div>
                 <Title text={label} className="text-primaryColor font-black" />
               </div>
               {headerContent}
             </div>
 
-            <div className={cn('flex flex-col items-center', className)}>
+            <div
+              className={cn(
+                'flex flex-col items-center',
+                // Відступи для візуального комфорту
+                'px-3 sm:px-4',
+                className
+              )}
+            >
               {filteredItems.map((item, index) => (
                 <BoardItem
                   key={item.id}

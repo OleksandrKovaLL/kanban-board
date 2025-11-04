@@ -83,7 +83,29 @@ export const BoardItem: React.FC<Props> = React.memo(
         {(provided) => (
           <div
             className={cn(
-              'bg-gray200 w-[400px] min-h-[165px] p-4 mb-4 rounded-lg cursor-grab',
+              'bg-gray200 w-full ' +
+                // Basic width
+                'max-w-full ' +
+                // @xs: 320px+
+                '@xs:max-w-full ' +
+                // @sm: 384px+
+                '@sm:max-w-full ' +
+                // @md: 448px+
+                '@md:max-w-[90%] ' +
+                // @lg: 512px+
+                '@lg:max-w-[85%] ' +
+                // @xl: 576px+
+                '@xl:max-w-[320px] ' +
+                // @2xl: 672px+
+                '@2xl:max-w-[340px] ' +
+                // @3xl: 768px+
+                '@3xl:max-w-[360px] ' +
+                // @4xl: 896px+
+                '@4xl:max-w-[380px] ' +
+                // @5xl: 1024px+
+                '@5xl:max-w-[400px] ' +
+                'min-h-[150px] sm:min-h-[160px] @md:min-h-[165px] p-3 ' +
+                'sm:p-4 mb-3 sm:mb-4 rounded-lg cursor-grab',
               className
             )}
             ref={provided.innerRef}
@@ -93,7 +115,7 @@ export const BoardItem: React.FC<Props> = React.memo(
               ...provided.draggableProps.style,
             }}
           >
-            <div className="flex flex-col gap-2 text-primaryColor">
+            <div className="flex flex-col gap-1.5 sm:gap-2 text-primaryColor">
               {fields.map(({ label, field }) => (
                 <EditableField
                   key={field}
@@ -106,7 +128,7 @@ export const BoardItem: React.FC<Props> = React.memo(
                 />
               ))}
             </div>
-            <div className="flex justify-end mt-4 gap-2">
+            <div className="flex justify-end mt-3 sm:mt-4 gap-1.5 sm:gap-2">
               {editMode ? (
                 <>
                   <Button

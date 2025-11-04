@@ -185,12 +185,12 @@ function App() {
   )
 
   return (
-    <div className="min-h-screen w-screen bg-fixed bg-cover bg-center bg-custom-bg p-10">
-      <div className="flex justify-between mb-12">
+    <div className="min-h-screen w-screen bg-fixed bg-cover bg-center bg-custom-bg p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
         <Title className="text-primaryColor" text="Your tasks" size="xl" />
         <Input
           type="text"
-          className="text-primaryColor"
+          className="text-primaryColor w-full sm:w-auto"
           value={searchValue}
           onChange={handleSearchChange}
           placeholder="поиск..."
@@ -198,7 +198,7 @@ function App() {
         />
       </div>
       <DragDropContext onDragEnd={onDragEnd}>
-        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           {initialBoards.map((board) => (
             <Board
               key={board.status}

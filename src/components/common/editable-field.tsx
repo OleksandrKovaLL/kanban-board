@@ -26,8 +26,8 @@ export const EditableField: React.FC<Props> = ({
   }
 
   return (
-    <div className={cn('flex gap-4', className)}>
-      <p>{label}</p>
+    <div className={cn('flex gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base', className)}>
+      <p className="min-w-[60px] sm:min-w-[70px]">{label}</p>
       {editMode ? (
         <Input
           type="text"

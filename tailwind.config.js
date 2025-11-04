@@ -4,6 +4,10 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './src/**/*.css'],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px', // Full HD+
+        '4xl': '2560px', // 2K/4K monitors
+      },
 
       backgroundImage: {
         'custom-bg': 'url(\'./assets/images/bg-img.png\')', // Add your image path here
@@ -66,5 +70,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/container-queries'),
+  ],
 }
